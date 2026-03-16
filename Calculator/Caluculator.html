@@ -1,0 +1,65 @@
+<script>
+    function validation(){
+          let num1=(document.getElementById("number1").value);
+        if(isNaN(num1)){
+             document.getElementById("l1").innerHTML="not valid";
+        }
+    }
+
+    function add(){
+        let num1=parseInt(document.getElementById("number1").value);
+        let num2=parseInt(document.getElementById("number2").value);
+        console.log(num1+num2);
+        document.getElementById("res_id").innerHTML="The sum is "+(num1+num2);
+    }
+    function sub(){
+        let num1=parseInt(document.getElementById("number1").value);
+        let num2=parseInt(document.getElementById("number2").value);
+        console.log(num1-num2);
+        document.getElementById("res_id").innerHTML="The diff is "+(num1-num2);
+    }
+    function mul(){
+        let num1=parseInt(document.getElementById("number1").value);
+        let num2=parseInt(document.getElementById("number2").value);
+        document.getElementById("res_id").innerHTML="The pro is "+(num1*num2);
+    }
+    function div(){
+        let num1=parseInt(document.getElementById("number1").value);
+        let num2=parseInt(document.getElementById("number2").value);
+        if(num2==0){
+            document.getElementById("res_id").innerHTML="zero division is not possible";
+        }
+        else document.getElementById("res_id").innerHTML="Division is "+(num1/num2);
+    }
+
+</script>
+<div style="text-align: center;">
+    <form>
+        <h2 style="color: crimson;">Calculator</h2>
+        <div>
+            <div>
+            <label>Enter number</label>
+            <input type="text" id="number1" name="number1">
+            <label id="l1" onchange="validation()"></label>
+            </div>
+            <div>
+            <label>Enter number</label>
+            <input type="text" id="number2" name="number2">
+            </div>
+            <div>
+                <input type="button" style="color: rgb(235, 99, 99);" value="+" onclick="add()"/>
+            </div>
+            <div>
+                <input type="button" style="color:blueviolet;" value="-" onclick="sub()"/>
+            </div>
+            <div>
+                <input type="button" style="color:khaki;" value="*" onclick="mul()"/>
+            </div>
+                <input type="button" style="color:darkorange;" value="/" onclick="div()"/>
+            <div>
+                <h4 id="res_id">Result will be displayed here</h4>
+            </div>
+        </div>
+    </form>
+</div>
+
